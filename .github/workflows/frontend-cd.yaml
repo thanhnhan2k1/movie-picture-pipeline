@@ -81,8 +81,6 @@ jobs:
     name: Deploy AWS
     needs: [lint, test]
     runs-on: ubuntu-latest
-    environment:
-      name: thienvv
     defaults:
       run:
         working-directory: ./starter/frontend
@@ -95,7 +93,6 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
-          aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
           aws-region: us-east-1
 
       - name: Login AWS
@@ -103,7 +100,6 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
-          aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
           aws-region: us-east-1
 
       - name: Build and Push Docker Image
