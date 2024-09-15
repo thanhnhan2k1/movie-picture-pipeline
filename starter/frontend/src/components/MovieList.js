@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 
 function MovieList({ onMovieClick }) {
   const [movies, setMovies] = useState([]);
@@ -17,7 +17,7 @@ function MovieList({ onMovieClick }) {
     <ul>
       {movies.map((movie) => (
         <li
-          className="movieItem"
+          className='movieItem'
           key={movie.id}
           onClick={() => onMovieClick(movie)}
         >
