@@ -2,7 +2,7 @@ name: Backend Continuous Deployment
 
 # Controls when the workflow will run a
 on:
-  pull_request:
+  push:
     branches:
       - main
   workflow_dispatch:
