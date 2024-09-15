@@ -10,7 +10,7 @@ on:
       - main
 
 env:
-  NODE_VERSION: "18.x"
+  NODE_VERSION: 18.18.0
   IMAGE_REPO_NAME: frontend
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: latest
+          node-version: ${{env.NODE_VERSION}}
 
       - name: Perform a cache action to restore cache
         uses: actions/cache@v4
@@ -59,10 +59,10 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: latest
+          node-version: ${{env.NODE_VERSION}}
 
       - name: Perform a cache action to restore cache
-        uses: actions/cache@v4
+        uses: actions/cache@v3
         id: cache-npm
         with:
           path: ~/.npm
